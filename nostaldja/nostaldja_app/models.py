@@ -11,7 +11,7 @@ class Fads(models.Model):
     name = models.TextField()
     image_url = models.TextField()
     description = models.TextField()
-    decade = models.IntegerField()
+    decade = models.ForeignKey(Decade, on_delete=models.CASCADE, related_name='fads')
 
-    def __str__(self):
+    def __str__ (self):
         return self.name
